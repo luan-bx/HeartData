@@ -1,0 +1,8 @@
+<!--pages/ble/ble.wxml-->
+<view>
+  <view class="weui-actionsheet__menu" wx:for="{{bleLists}}">
+    <view data-id="{{item.deviceId}}" class="weui-actionsheet__cell" bindtap="connectBle">
+      {{item.deviceId}}---{{item.name}}
+    </view>
+  </view>
+</view>

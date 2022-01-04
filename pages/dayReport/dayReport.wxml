@@ -1,0 +1,40 @@
+<!--pages/dayReport/dayReport.wxml-->
+<!--详细日报告 weui-Preview组件-->
+<view class="weui-panel__hd">{{year}}年{{month}}月{{day}}日心电报告</view>
+<!--日健康指数-->
+<view class="weui-cells weui-cells_after-title day">
+  <view class="weui-cell">
+    <view class="weui-cell__bd">日健康指数</view>
+    <view class="weui-cell__ft">{{dayReports.data[0].month[0].dayLists[0].healthIndex}}</view>
+  </view>
+</view>
+<!--日文件列表-->
+<block class="page__bd" wx:for="{{dayReports.data[0].month[0].dayLists[0].fileReportLists}}" wx:for-item="i">
+  <view class="weui-form-preview">
+    <view class="weui-form-preview__hd">
+      <view class="weui-form-preview__item">
+        <label class="weui-form-preview__label">数据{{i.id}}</label>
+      </view>
+    </view>
+    <view class="weui-form-preview__bd">
+      <view class="weui-form-preview__item">
+        <label class="weui-form-preview__label">开始时间</label>
+        <text class="weui-form-preview__value">{{i.startTime}}</text>
+      </view>
+      <view class="weui-form-preview__item">
+        <label class="weui-form-preview__label">结束时间</label>
+        <text class="weui-form-preview__value">{{i.endTime}}</text>
+      </view>
+      <view class="weui-form-preview__item">
+        <label class="weui-form-preview__label">平均心率</label>
+        <text class="weui-form-preview__value">{{i.avgBeat}}</text>
+      </view>
+      <view class="weui-form-preview__item">
+        <label class="weui-form-preview__label">心率状况</label>
+        <text class="weui-form-preview__value" wx:if="{{i.avgBeat >= 72 && i.avgBeat <= 78}}">正常</text>
+        <text class="weui-form-preview__value" wx:elif="{{i.avgBeat < 72}}">心率偏低</text>
+        <text class="weui-form-preview__value" wx:elif="{{i.avgBeat > 78}}">心率偏高</text>
+      </view>
+    </view>
+  </view>
+</block>

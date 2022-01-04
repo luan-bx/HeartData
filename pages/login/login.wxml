@@ -1,0 +1,12 @@
+<!--pages/login/login.wxml-->
+<view class="login-css">
+  <view class="img">
+    <image class="background"  src="/static/imgs/login-background-mini.jpg"></image>
+  </view>
+  <view>
+    <a class="weui-btn_cell weui-btn_cell-primary btn" bindtap="loadUserInfo">
+				<image class="weui-btn_cell__icon" src="/static/imgs/weixin.png"></image>
+        微信登陆
+		</a>
+  </view>
+</view>

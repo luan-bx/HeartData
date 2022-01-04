@@ -1,0 +1,43 @@
+<!--index.wxml-->
+<view class="index-css">
+  <!--用户信息-->
+  <view class="weui-cells weui-cells_after-title">
+    <view class="weui-cell">
+      <view class="weui-cell__bd">昵称</view>
+      <view class="weui-cell__ft">{{userInfo.nickName}}</view>
+    </view>
+    <view class="weui-cell">
+      <view class="weui-cell__bd">性别</view>
+      <view class="weui-cell__ft" wx:if="{{userInfo.gender == 1}}">男</view>
+      <view class="weui-cell__ft" wx:elif="{{userInfo.gender == 2}}">女</view>
+      <view class="weui-cell__ft" wx:else>未知</view>
+    </view>
+    <view class="weui-cell">
+      <view class="weui-cell__bd">城市</view>
+      <view class="weui-cell__ft">{{userInfo.city}} {{userInfo.province}}</view>
+    </view>
+  </view>
+  <!--心电信号显示-->
+  <canvas class="canvas" canvas-id="heart" binderror="canvasIdErrorCallback" disable-scroll='true'></canvas>
+  <!--开始连接按钮-->
+  <a class="weui-btn weui-btn_primary" bindtap="action">开始连接</a>
+  <!--测试文件传输按钮-->
+  <a class="weui-btn weui-btn_primary" bindtap="testTransport">测试数据/文件传输</a>
+</view>
+<!--蓝牙列表-->
+<view wx:if="{{showBluetoothDevices}}" class="fadeIn">
+  <view class="weui-mask"></view>
+  <view class="weui-actionsheet weui-actionsheet_toggle">
+    <view class="weui-actionsheet__title">
+      <view class="weui-actionsheet__title-text">可连接蓝牙列表</view>
+    </view>
+    <view class="weui-actionsheet__menu" wx:for="{{bleLists}}">
+      <view data-id="{{item.deviceId}}" class="weui-actionsheet__cell" bindtap="connectBle">
+        {{item.deviceId}}---{{item.name}}
+      </view>
+    </view>
+    <view class="weui-actionsheet__action">
+      <view class="weui-actionsheet__cell" bindtap="cancelConnectBle">取消</view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,19 @@
+/* pages/login/login.wxss */
+.login-css{
+  height: 1500rpx;
+}
+.img{
+  height: 1500rpx;
+  width: 750rpx;
+  position: absolute;
+}
+.btn{
+  position: absolute;
+  left: 220rpx;
+  top: 1000rpx;
+  background-color: greenyellow;
+}
+.background{
+  height: 100%;
+  width: 100%;
+}

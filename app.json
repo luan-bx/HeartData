@@ -1,0 +1,36 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/login/login",
+    "pages/report/report",
+    "pages/yearReport/yearReport",
+    "pages/monthReport/monthReport",
+    "pages/dayReport/dayReport",
+    "pages/ble/ble"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "Shark Heart Data",
+    "navigationBarTextStyle":"black"
+  },
+  "tabBar": {
+    "list": [{
+      "pagePath": "pages/index/index",
+      "text": "心电信息",
+      "iconPath": "static/imgs/person-profile-image.png",
+      "selectedIconPath": "static/imgs/person-profile-image.png"
+    },{
+      "pagePath": "pages/report/report",
+      "text": "心电报告",
+      "iconPath": "static/imgs/checklist.png",
+      "selectedIconPath": "static/imgs/checklist.png"
+    }
+  ]
+  },
+  "useExtendedLib": {
+    "weui": true
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

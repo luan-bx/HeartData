@@ -1,0 +1,8 @@
+/**index.wxss**/
+.canvas{
+  height: 500rpx;
+  width: 100%;
+  background-color: rgb(233, 225, 225);
+  margin-bottom: 50rpx;
+  margin-top: 50rpx;
+}

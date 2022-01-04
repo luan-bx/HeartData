@@ -1,0 +1,15 @@
+<!--pages/report-detail/report-detail.wxml-->
+<view class="weui-panel__hd">{{year}}心电报告</view>
+<view class="weui-panel__bd">
+  <block wx:for="{{yearReports.data[0].month}}" wx:for-item="j">
+    <a data-year="{{yearReports.data[0].year}}" data-month="{{j.m}}" class="weui-media-box weui-media-box_appmsg" bindtap="monthReport">
+      <view class="weui-media-box__hd">
+        <image class="weui-media-box__thumb" src="{{j.imgurl}}"></image>
+      </view>
+      <view class="weui-media-box__bd">
+        <h4 class="weui-media-box__title">{{j.title}}</h4>
+        <view class="weui-media-box__desc">{{j.description}}</view>
+      </view>
+    </a>
+  </block>
+</view>

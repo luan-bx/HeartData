@@ -1,0 +1,24 @@
+<!--pages/report/report.wxml-->
+<!--年、月报告 weui-panel组件-->
+<block wx:for="{{reports.data}}" wx:for-item="i">
+  <view class="weui-panel__hd">{{i.year}}心电报告</view>
+  <view class="weui-panel__bd">
+    <block wx:for="{{i.month}}" wx:for-item="j">
+      <a data-year="{{i.year}}" data-month="{{j.m}}" class="weui-media-box weui-media-box_appmsg"  bindtap="monthReport">
+        <view class="weui-media-box__hd">
+          <image class="weui-media-box__thumb" src="{{j.imgurl}}"></image>
+        </view>
+        <view class="weui-media-box__bd">
+          <h4 class="weui-media-box__title">{{j.title}}</h4>
+          <view class="weui-media-box__desc">{{j.description}}</view>
+        </view>
+      </a>
+    </block>
+  </view>
+  <view class="weui-panel__ft">
+    <a id="{{i.year}}" class="weui-cell weui-cell_active weui-cell_access weui-cell_link" bindtap="yearReport">
+      <view class="weui-cell__bd">查看更多</view>
+      <text class="weui-cell__ft"></text>
+    </a>
+  </view>
+</block>

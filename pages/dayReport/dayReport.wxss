@@ -1,0 +1,8 @@
+/* pages/dayReport/dayReport.wxss */
+.weui-form-preview{
+  margin-bottom:25px;
+  background-color: rgb(170, 177, 159);
+}
+.day{
+  margin-bottom: 25rpx;
+}
